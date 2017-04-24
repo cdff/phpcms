@@ -2,8 +2,8 @@
 <script type="text/javascript">
   $(document).ready(function() {
 	$.formValidator.initConfig({autotip:true,formid:"install",onerror:function(msg){}});
-  	$("input:radio[name='install_phpsso']").formValidator({relativeid:"install_phpsso_2",tipid:"aiguoTip",tipcss :{"left":"60px"},onshow:"è¯·é€‰æ‹©ä¸€ä¸ªå®‰è£…ç±»å‹",onfocus:"è¯·é€‰æ‹©ä¸€ä¸ªå®‰è£…ç±»å‹",oncorrect:"é€‰æ‹©å®Œæˆ"}).inputValidator({min:1,max:1,onerror:"è¯·é€‰æ‹©ä¸€ä¸ªå®‰è£…ç±»å‹"});
-	$("#sso_url").formValidator({onshow:"è¯·è¾“å…¥phpssoåœ°å€ï¼Œå¿…é¡»ä»¥'/'ç»“æŸ",onfocus:"è¯·è¾“å…¥phpssoåœ°å€ï¼Œå¿…é¡»ä»¥'/'ç»“æŸ",empty:false}).inputValidator({onerror:"åœ°å€å¿…é¡»ä»¥'/'ç»“æŸ"}).regexValidator({regexp:"http:\/\/(.+)\/$",onerror:"åœ°å€å¿…é¡»ä»¥'/'ç»“æŸ"});	
+  	$("input:radio[name='install_phpsso']").formValidator({relativeid:"install_phpsso_2",tipid:"aiguoTip",tipcss :{"left":"60px"},onshow:"ÇëÑ¡ÔñÒ»¸ö°²×°ÀàĞÍ",onfocus:"ÇëÑ¡ÔñÒ»¸ö°²×°ÀàĞÍ",oncorrect:"Ñ¡ÔñÍê³É"}).inputValidator({min:1,max:1,onerror:"ÇëÑ¡ÔñÒ»¸ö°²×°ÀàĞÍ"});
+	$("#sso_url").formValidator({onshow:"ÇëÊäÈëphpssoµØÖ·£¬±ØĞëÒÔ'/'½áÊø",onfocus:"ÇëÊäÈëphpssoµØÖ·£¬±ØĞëÒÔ'/'½áÊø",empty:false}).inputValidator({onerror:"µØÖ·±ØĞëÒÔ'/'½áÊø"}).regexValidator({regexp:"http:\/\/(.+)\/$",onerror:"µØÖ·±ØĞëÒÔ'/'½áÊø"});	
   })
 </script>
 	<div class="body_box">
@@ -20,35 +20,35 @@
 					<form id="install" action="install.php?" method="post">
 					<input type="hidden" name="step" value="4">
 <fieldset>
-	<legend>PHPSSOé…ç½®</legend>
+	<legend>PHPSSOÅäÖÃ</legend>
 	<div class="content">
-    	<input type="radio" name="install_phpsso" id="install_phpsso_1" value="1" onclick="set_sso_hidden()">&nbsp;&nbsp;å…¨æ–°å®‰è£…PHPCMS V9 (å« PHPSSO)<br/>
-        <input type="radio" name="install_phpsso" id="install_phpsso_2" value="2" onclick="set_sso()">&nbsp;&nbsp;ä»…å®‰è£…PHPCMS V9 (æ‰‹å·¥æŒ‡å®šå·²ç»å®‰è£…çš„PHPSSO)
+    	<input type="radio" name="install_phpsso" id="install_phpsso_1" value="1" onclick="set_sso_hidden()">&nbsp;&nbsp;È«ĞÂ°²×°PHPCMS V9 (º¬ PHPSSO)<br/>
+        <input type="radio" name="install_phpsso" id="install_phpsso_2" value="2" onclick="set_sso()">&nbsp;&nbsp;½ö°²×°PHPCMS V9 (ÊÖ¹¤Ö¸¶¨ÒÑ¾­°²×°µÄPHPSSO)
     </div>
 	<div id="sso_cfg" class="d_n">
 		<ul>
-			<li>Phpssoåœ°  å€:<input type="text" name="sso[sso_url]" id="sso_url" value="http://127.0.0.1/phpsso_server/" class="w260"></li>
-			<li>Phpssoç”¨æˆ·å:<input type="text" name="sso[username]" value=""></li>
-			<li>Phpssoå¯†  ç :<input type="password" name="sso[password]" value=""></li>
+			<li>PhpssoµØ  Ö·:<input type="text" name="sso[sso_url]" id="sso_url" value="http://127.0.0.1/phpsso_server/" class="w260"></li>
+			<li>PhpssoÓÃ»§Ãû:<input type="text" name="sso[username]" value=""></li>
+			<li>PhpssoÃÜ  Âë:<input type="password" name="sso[password]" value=""></li>
 		</ul>
 	</div>
 </fieldset>					
 <fieldset>
-	<legend>å¿…é€‰æ¨¡å—</legend>
+	<legend>±ØÑ¡Ä£¿é</legend>
 	<div class="content">
-    	<label><input type="checkbox" name="admin" value="admin" checked disabled>åå°ç®¡ç†æ¨¡å—</label>
-        <label><input type="checkbox" name="content" value="content" checked disabled>å†…å®¹æ¨¡å—</label>
-        <label><input type="checkbox" name="member" value="member" checked  disabled>ä¼šå‘˜æ¨¡å‹</label>
-       <label><input type="checkbox" name="pay" value="pay" checked  disabled>è´¢åŠ¡æ¨¡å—</label>
-       <label><input type="checkbox" name="special" value="special" checked  disabled>ä¸“é¢˜æ¨¡å—</label>
-       <label><input type="checkbox" name="search" value="search" checked  disabled>å…¨æ–‡æœç´¢</label>
+    	<label><input type="checkbox" name="admin" value="admin" checked disabled>ºóÌ¨¹ÜÀíÄ£¿é</label>
+        <label><input type="checkbox" name="content" value="content" checked disabled>ÄÚÈİÄ£¿é</label>
+        <label><input type="checkbox" name="member" value="member" checked  disabled>»áÔ±Ä£ĞÍ</label>
+       <label><input type="checkbox" name="pay" value="pay" checked  disabled>²ÆÎñÄ£¿é</label>
+       <label><input type="checkbox" name="special" value="special" checked  disabled>×¨ÌâÄ£¿é</label>
+       <label><input type="checkbox" name="search" value="search" checked  disabled>È«ÎÄËÑË÷</label>
 	   <label><input type="checkbox" name="phpsso" value="phpsso" checked  disabled>PHPSSO</label>
-	   <label><input type="checkbox" name="video" value="video" checked  disabled>è§†é¢‘æ¨¡å—</label>
+	   <label><input type="checkbox" name="video" value="video" checked  disabled>ÊÓÆµÄ£¿é</label>
     </div>
 </fieldset>
 		
 <fieldset>
-	<legend>å¯é€‰æ¨¡å—</legend>
+	<legend>¿ÉÑ¡Ä£¿é</legend>
 	<div class="content"> 
 <?php
 	$count = count($PHPCMS_MODULES['name']);
@@ -57,7 +57,7 @@
 	{
 		if($j%5==0) echo "<tr >";
 	?>
-	<label><input type="checkbox" name="selectmod[]" value="<?php echo $module?>" checked><?php echo $PHPCMS_MODULES['modulename'][$i]?>æ¨¡å—</label>
+	<label><input type="checkbox" name="selectmod[]" value="<?php echo $module?>" checked><?php echo $PHPCMS_MODULES['modulename'][$i]?>Ä£¿é</label>
 	<?php
 		if($j%5==4) echo "</tr>";
 	$j++;
@@ -66,9 +66,9 @@
     </div>
 </fieldset>
 <fieldset>
-	<legend>å¯é€‰æ•°æ®</legend>
+	<legend>¿ÉÑ¡Êı¾İ</legend>
 	<div class="content">
-    	<label style="width:auto"><input type="checkbox" name="testdata" value="1" checked>é»˜è®¤æµ‹è¯•æ•°æ® ï¼ˆç”¨äºæ–°æ‰‹å’Œè°ƒè¯•ç”¨æˆ·ï¼‰</label>
+    	<label style="width:auto"><input type="checkbox" name="testdata" value="1" checked>Ä¬ÈÏ²âÊÔÊı¾İ £¨ÓÃÓÚĞÂÊÖºÍµ÷ÊÔÓÃ»§£©</label>
     </div>
 </fieldset>
 					</form>
@@ -77,7 +77,7 @@
                 </div>
                 <div class="bg_b"></div>
             </div>
-            <div class="btn_box"><a href="javascript:history.go(-1);" class="s_btn pre">ä¸Šä¸€æ­¥</a><a href="javascript:void(0);"  onClick="$('#install').submit();return false;" class="x_btn">ä¸‹ä¸€æ­¥</a></div>
+            <div class="btn_box"><a href="javascript:history.go(-1);" class="s_btn pre">ÉÏÒ»²½</a><a href="javascript:void(0);"  onClick="$('#install').submit();return false;" class="x_btn">ÏÂÒ»²½</a></div>
         </div>
     </div>
 </body>

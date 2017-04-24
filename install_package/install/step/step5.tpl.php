@@ -2,12 +2,12 @@
 <script type="text/javascript">
   $(document).ready(function() {
 	$.formValidator.initConfig({autotip:true,formid:"install",onerror:function(msg){}});
-	$("#username").formValidator({onshow:"2åˆ°20ä¸ªå­—ç¬¦ï¼Œä¸å«éæ³•å­—ç¬¦ï¼",onfocus:"è¯·è¾“å…¥ç”¨æˆ·å3è‡³20ä½"}).inputValidator({min:3,max:20,onerror:"ç”¨æˆ·åé•¿åº¦åº”ä¸º3è‡³20ä½"})
-	$("#password").formValidator({onshow:"6åˆ°20ä¸ªå­—ç¬¦<font color='FFFF00'>ï¼ˆé»˜è®¤ä¸º phpcmsï¼‰</font>",onfocus:"å¯†ç åˆæ³•é•¿åº¦ä¸º6è‡³20ä½"}).inputValidator({min:6,max:20,onerror:"å¯†ç åˆæ³•é•¿åº¦ä¸º6è‡³20ä½"});
-	$("#pwdconfirm").formValidator({onshow:"è¯·å†æ¬¡è¾“å…¥å¯†ç ",onfocus:"è¯·è¾“å…¥ç¡®è®¤å¯†ç ",oncorrect:"ä¸¤æ¬¡å¯†ç ç›¸åŒ"}).compareValidator({desid:"password",operateor:"=",onerror:"ä¸¤æ¬¡å¯†ç è¾“å…¥ä¸åŒ"});
+	$("#username").formValidator({onshow:"2µ½20¸ö×Ö·û£¬²»º¬·Ç·¨×Ö·û£¡",onfocus:"ÇëÊäÈëÓÃ»§Ãû3ÖÁ20Î»"}).inputValidator({min:3,max:20,onerror:"ÓÃ»§Ãû³¤¶ÈÓ¦Îª3ÖÁ20Î»"})
+	$("#password").formValidator({onshow:"6µ½20¸ö×Ö·û<font color='FFFF00'>£¨Ä¬ÈÏÎª phpcms£©</font>",onfocus:"ÃÜÂëºÏ·¨³¤¶ÈÎª6ÖÁ20Î»"}).inputValidator({min:6,max:20,onerror:"ÃÜÂëºÏ·¨³¤¶ÈÎª6ÖÁ20Î»"});
+	$("#pwdconfirm").formValidator({onshow:"ÇëÔÙ´ÎÊäÈëÃÜÂë",onfocus:"ÇëÊäÈëÈ·ÈÏÃÜÂë",oncorrect:"Á½´ÎÃÜÂëÏàÍ¬"}).compareValidator({desid:"password",operateor:"=",onerror:"Á½´ÎÃÜÂëÊäÈë²»Í¬"});
 		
-	$("#email").formValidator({onshow:"è¯·è¾“å…¥email",onfocus:"è¯·è¾“å…¥email",oncorrect:"emailæ ¼å¼æ­£ç¡®"}).regexValidator({regexp:"email",datatype:"enum",onerror:"emailæ ¼å¼é”™è¯¯"})
-	$("#dbhost").formValidator({onshow:"æ•°æ®åº“æœåŠ¡å™¨åœ°å€, ä¸€èˆ¬ä¸º localhost",onfocus:"æ•°æ®åº“æœåŠ¡å™¨åœ°å€, ä¸€èˆ¬ä¸º localhost",oncorrect:"æ•°æ®åº“æœåŠ¡å™¨åœ°å€æ­£ç¡®",empty:false}).inputValidator({min:1,onerror:"æ•°æ®åº“æœåŠ¡å™¨åœ°å€ä¸èƒ½ä¸ºç©º"});
+	$("#email").formValidator({onshow:"ÇëÊäÈëemail",onfocus:"ÇëÊäÈëemail",oncorrect:"email¸ñÊ½ÕıÈ·"}).regexValidator({regexp:"email",datatype:"enum",onerror:"email¸ñÊ½´íÎó"})
+	$("#dbhost").formValidator({onshow:"Êı¾İ¿â·şÎñÆ÷µØÖ·, Ò»°ãÎª localhost",onfocus:"Êı¾İ¿â·şÎñÆ÷µØÖ·, Ò»°ãÎª localhost",oncorrect:"Êı¾İ¿â·şÎñÆ÷µØÖ·ÕıÈ·",empty:false}).inputValidator({min:1,onerror:"Êı¾İ¿â·şÎñÆ÷µØÖ·²»ÄÜÎª¿Õ"});
 
   })
 </script>
@@ -26,54 +26,54 @@
 			<input type="hidden" name="step" value="6">	
             
 <fieldset>
-	<legend>å¡«å†™æ•°æ®åº“ä¿¡æ¯</legend>
+	<legend>ÌîĞ´Êı¾İ¿âĞÅÏ¢</legend>
 	<div class="content">
     	<table width="100%" cellspacing="1" cellpadding="0" >
 			<tr>
-			<th width="20%" align="right" >æ•°æ®åº“ä¸»æœºï¼š</th>
+			<th width="20%" align="right" >Êı¾İ¿âÖ÷»ú£º</th>
 			<td>
 			<input name="dbhost" type="text" id="dbhost" value="<?php echo $hostname?>" class="input-text" />
 			</td>
 			</tr>
 			<tr>
-			<th align="right">æ•°æ®åº“ç«¯å£ï¼š</th>
+			<th align="right">Êı¾İ¿â¶Ë¿Ú£º</th>
 			<td><input name="dbport" type="text" id="dbport" value="<?php echo $port?>" class="input-text" /></td>
 			</tr>
 			<tr>
-			<th align="right">æ•°æ®åº“å¸å·ï¼š</th>
+			<th align="right">Êı¾İ¿âÕÊºÅ£º</th>
 			<td><input name="dbuser" type="text" id="dbuser" value="<?php echo $username?>" class="input-text" /></td>
 			</tr>
 			<tr>
-			<th align="right">æ•°æ®åº“å¯†ç ï¼š</th>
+			<th align="right">Êı¾İ¿âÃÜÂë£º</th>
 			<td><input name="dbpw" type="password" id="dbpw" value="<?php echo $password?>" class="input-text" /></td>
 			</tr>
 			<tr>
-			<th align="right">æ•°æ®åº“åç§°ï¼š</th>
+			<th align="right">Êı¾İ¿âÃû³Æ£º</th>
 			<td><input name="dbname" type="text" id="dbname" value="<?php echo $database?>" class="input-text" /></td>
 			</tr>
 			<tr>
-			<th align="right">æ•°æ®è¡¨å‰ç¼€ï¼š</th>
-			<td><input name="tablepre" type="text" id="tablepre" value="<?php echo $tablepre?>" class="input-text" />  <img src="./images/help.png" style="cursor:pointer;" title="å¦‚æœä¸€ä¸ªæ•°æ®åº“å®‰è£…å¤šä¸ªphpcmsï¼Œè¯·ä¿®æ”¹è¡¨å‰ç¼€" align="absmiddle" />
+			<th align="right">Êı¾İ±íÇ°×º£º</th>
+			<td><input name="tablepre" type="text" id="tablepre" value="<?php echo $tablepre?>" class="input-text" />  <img src="./images/help.png" style="cursor:pointer;" title="Èç¹ûÒ»¸öÊı¾İ¿â°²×°¶à¸öphpcms£¬ÇëĞŞ¸Ä±íÇ°×º" align="absmiddle" />
 			<span id='helptablepre'></span></td>
 			</tr>
 			<tr>
-			<th align="right">æ•°æ®åº“å­—ç¬¦é›†ï¼š</th>
+			<th align="right">Êı¾İ¿â×Ö·û¼¯£º</th>
 			<td>
-			<input name="dbcharset" type="radio" id="dbcharset" value="" <?php if(strtolower($charset)=='') echo ' checked="checked" '?>/>é»˜è®¤
+			<input name="dbcharset" type="radio" id="dbcharset" value="" <?php if(strtolower($charset)=='') echo ' checked="checked" '?>/>Ä¬ÈÏ
 			<input name="dbcharset" type="radio" id="dbcharset" value="gbk" <?php if(strtolower($charset)=='gbk') echo '  checked="checked" '?> <?php if(strtolower($charset)=='utf8') echo 'disabled'?>/>GBK
 			<input name="dbcharset" type="radio" id="dbcharset" value="utf8" <?php if(strtolower($charset)=='utf8') echo '  checked="checked" '?> <?php if(strtolower($charset)=='gbk') echo 'disabled'?>/>utf8 
 			<input name="dbcharset" type="radio" id="dbcharset" value="latin1" <?php if(strtolower($charset)=='latin1') echo ' checked '?> />latin1 
-			<img src="./images/help.png" style="cursor:pointer;" title="å¦‚æœMysqlç‰ˆæœ¬ä¸º4.0.xï¼Œåˆ™è¯·é€‰æ‹©é»˜è®¤ï¼›&#10;å¦‚æœMysqlç‰ˆæœ¬ä¸º4.1.xæˆ–ä»¥ä¸Šï¼Œåˆ™è¯·é€‰æ‹©å…¶ä»–å­—ç¬¦é›†ï¼ˆä¸€èˆ¬é€‰GBKï¼‰" align="absmiddle" />
+			<img src="./images/help.png" style="cursor:pointer;" title="Èç¹ûMysql°æ±¾Îª4.0.x£¬ÔòÇëÑ¡ÔñÄ¬ÈÏ£»&#10;Èç¹ûMysql°æ±¾Îª4.1.x»òÒÔÉÏ£¬ÔòÇëÑ¡ÔñÆäËû×Ö·û¼¯£¨Ò»°ãÑ¡GBK£©" align="absmiddle" />
 			<span id='helpdbcharset'></span>
 			</td>
 			</tr>
 			<tr>
-			<th align="right">å¯ç”¨æŒä¹…è¿æ¥ï¼š</th>
+			<th align="right">ÆôÓÃ³Ö¾ÃÁ¬½Ó£º</th>
 			<td><input name="pconnect" type="radio" id="pconnect" value="1" 
-			<?php if($pconnect==1) echo '  checked="checked" '?>/>æ˜¯&nbsp;&nbsp;
+			<?php if($pconnect==1) echo '  checked="checked" '?>/>ÊÇ&nbsp;&nbsp;
 			<input name="pconnect" type="radio" id="pconnect" value="0" 
-			<?php if($pconnect==0) echo '  checked="checked" '?>/>å¦
-			<img src="./images/help.png" style="cursor:pointer;" title="å¦‚æœå¯ç”¨æŒä¹…è¿æ¥ï¼Œåˆ™æ•°æ®åº“è¿æ¥ä¸Šåä¸é‡Šæ”¾ï¼Œä¿å­˜ä¸€ç›´è¿æ¥çŠ¶æ€ï¼›å¦‚æœä¸å¯ç”¨ï¼Œåˆ™æ¯æ¬¡è¯·æ±‚éƒ½ä¼šé‡æ–°è¿æ¥æ•°æ®åº“ï¼Œä½¿ç”¨å®Œè‡ªåŠ¨å…³é—­è¿æ¥ã€‚" align="absmiddle" /><span id='helppconnect'></span>
+			<?php if($pconnect==0) echo '  checked="checked" '?>/>·ñ
+			<img src="./images/help.png" style="cursor:pointer;" title="Èç¹ûÆôÓÃ³Ö¾ÃÁ¬½Ó£¬ÔòÊı¾İ¿âÁ¬½ÓÉÏºó²»ÊÍ·Å£¬±£´æÒ»Ö±Á¬½Ó×´Ì¬£»Èç¹û²»ÆôÓÃ£¬ÔòÃ¿´ÎÇëÇó¶¼»áÖØĞÂÁ¬½ÓÊı¾İ¿â£¬Ê¹ÓÃÍê×Ô¶¯¹Ø±ÕÁ¬½Ó¡£" align="absmiddle" /><span id='helppconnect'></span>
 			<span id='helptablepre'></span></td>
 			</tr>
 			</table>
@@ -81,23 +81,23 @@
 </fieldset>
 
 <fieldset>
-	<legend>å¡«å†™å¸å·ä¿¡æ¯</legend>
+	<legend>ÌîĞ´ÕÊºÅĞÅÏ¢</legend>
 	<div class="content">
     	<table width="100%" cellspacing="1" cellpadding="0">
 			  <tr>
-				<th width="20%" align="right">è¶…çº§ç®¡ç†å‘˜å¸å·ï¼š</th>
+				<th width="20%" align="right">³¬¼¶¹ÜÀíÔ±ÕÊºÅ£º</th>
 				<td><input name="username" type="text" id="username" value="phpcms" class="input-text" /></td>
 			  </tr>
 			  <tr>
-				<th align="right">ç®¡ç†å‘˜å¯†ç ï¼š</th>
+				<th align="right">¹ÜÀíÔ±ÃÜÂë£º</th>
 				<td><input name="password" type="password" id="password" value="phpcms" class="input-text" /></td>
 			  </tr>
 			  <tr>
-				<th align="right">ç¡®è®¤å¯†ç ï¼š</th>
+				<th align="right">È·ÈÏÃÜÂë£º</th>
 				<td><input name="pwdconfirm" type="password" id="pwdconfirm" value="phpcms" class="input-text" /></td>
 			  </tr>
 			  <tr>
-				<th align="right">ç®¡ç†å‘˜E-mailï¼š</th>
+				<th align="right">¹ÜÀíÔ±E-mail£º</th>
 				<td><input name="email" type="text" id="email" class="input-text" />
 					<input type="hidden" name="selectmod" value="<?php echo $selectmod?>" />
 					<input type="hidden" name="testdata" value="<?php echo $testdata?>" />
@@ -113,7 +113,7 @@
                 </div>
                 <div class="bg_b"></div>
             </div>
-            <div class="btn_box"><a href="javascript:history.go(-1);" class="s_btn pre">ä¸Šä¸€æ­¥</a><a href="javascript:void(0);"  onClick="checkdb();return false;" class="x_btn">ä¸‹ä¸€æ­¥</a></div>
+            <div class="btn_box"><a href="javascript:history.go(-1);" class="s_btn pre">ÉÏÒ»²½</a><a href="javascript:void(0);"  onClick="checkdb();return false;" class="x_btn">ÏÂÒ»²½</a></div>
         </div>
     </div>
 </body>
@@ -121,10 +121,10 @@
 <script language="JavaScript">
 <!--
 var errmsg = new Array();
-errmsg[0] = 'æ‚¨å·²ç»å®‰è£…è¿‡Phpcmsï¼Œç³»ç»Ÿä¼šè‡ªåŠ¨åˆ é™¤è€æ•°æ®ï¼æ˜¯å¦ç»§ç»­ï¼Ÿ';
-errmsg[2] = 'æ— æ³•è¿æ¥æ•°æ®åº“æœåŠ¡å™¨ï¼Œè¯·æ£€æŸ¥é…ç½®ï¼';
-errmsg[3] = 'æˆåŠŸè¿æ¥æ•°æ®åº“ï¼Œä½†æ˜¯æŒ‡å®šçš„æ•°æ®åº“ä¸å­˜åœ¨å¹¶ä¸”æ— æ³•è‡ªåŠ¨åˆ›å»ºï¼Œè¯·å…ˆé€šè¿‡å…¶ä»–æ–¹å¼å»ºç«‹æ•°æ®åº“ï¼';
-errmsg[6] = 'æ•°æ®åº“ç‰ˆæœ¬ä½äºMysql 4.0ï¼Œæ— æ³•å®‰è£…Phpcmsï¼Œè¯·å‡çº§æ•°æ®åº“ç‰ˆæœ¬ï¼';
+errmsg[0] = 'ÄúÒÑ¾­°²×°¹ıPhpcms£¬ÏµÍ³»á×Ô¶¯É¾³ıÀÏÊı¾İ£¡ÊÇ·ñ¼ÌĞø£¿';
+errmsg[2] = 'ÎŞ·¨Á¬½ÓÊı¾İ¿â·şÎñÆ÷£¬Çë¼ì²éÅäÖÃ£¡';
+errmsg[3] = '³É¹¦Á¬½ÓÊı¾İ¿â£¬µ«ÊÇÖ¸¶¨µÄÊı¾İ¿â²»´æÔÚ²¢ÇÒÎŞ·¨×Ô¶¯´´½¨£¬ÇëÏÈÍ¨¹ıÆäËû·½Ê½½¨Á¢Êı¾İ¿â£¡';
+errmsg[6] = 'Êı¾İ¿â°æ±¾µÍÓÚMysql 4.0£¬ÎŞ·¨°²×°Phpcms£¬ÇëÉı¼¶Êı¾İ¿â°æ±¾£¡';
 
 function checkdb() 
 {

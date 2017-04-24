@@ -16,7 +16,7 @@
                 </div>
                 <div class="bg_b"></div>
             </div>
-            <div class="btn_box"><a href="javascript:void(0);" class="is_btn" onclick="$('#install').submit();return false;">å¼€å§‹å®‰è£…</a></div>
+            <div class="btn_box"><a href="javascript:void(0);" class="is_btn" onclick="$('#install').submit();return false;">¿ªÊ¼°²×°</a></div>
 			<form id="install" action="install.php?" method="get">
 			<input type="hidden" name="step" value="2">
 			</form>

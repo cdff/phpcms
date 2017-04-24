@@ -113,7 +113,7 @@ class administrator extends admin{
 			echo 1;exit();
 		}
 	}
-	//æ·»åŠ ä¿®æ”¹ç”¨æˆ· éªŒè¯ä¸²éªŒè¯
+	//Ìí¼ÓĞŞ¸ÄÓÃ»§ ÑéÖ¤´®ÑéÖ¤
 	private function check_admin_manage_code(){
 		$admin_manage_code = $_POST['admin_manage_code'];
 		$pc_auth_key = md5(pc_base::load_config('system','auth_key').'adminuser');
@@ -127,7 +127,7 @@ class administrator extends admin{
 		}
 		return true;
 	}
-	//æ·»åŠ ä¿®æ”¹ç”¨æˆ· ç”ŸæˆéªŒè¯ä¸²
+	//Ìí¼ÓĞŞ¸ÄÓÃ»§ Éú³ÉÑéÖ¤´®
 	private function get_admin_manage_code(){
 		$pc_auth_key = md5(pc_base::load_config('system','auth_key').'adminuser');
 		$code = sys_auth("adminuser_".$_GET[pc_hash]."_".time(), 'ENCODE', $pc_auth_key);

@@ -1,9 +1,9 @@
 <?php 
 
 /**
- * ç”Ÿæˆéšæœºå­—ç¬¦ä¸²
- * @param string $lenth é•¿åº¦
- * @return string å­—ç¬¦ä¸²
+ * Éú³ÉËæ»ú×Ö·û´®
+ * @param string $lenth ³¤¶È
+ * @return string ×Ö·û´®
  */
 function create_randomstr($lenth = 6) {
 	return random($lenth, '123456789abcdefghijklmnpqrstuvwxyzABCDEFGHIJKLMNPQRSTUVWXYZ');
@@ -11,8 +11,8 @@ function create_randomstr($lenth = 6) {
 
 /**
  * 
- * @param $password å¯†ç 
- * @param $random éšæœºæ•°
+ * @param $password ÃÜÂë
+ * @param $random Ëæ»úÊý
  */
 function create_password($password='', $random='') {
 	if(empty($random)) {
@@ -23,7 +23,7 @@ function create_password($password='', $random='') {
 	return md5(md5($password).$random);
 }
 /**
- * æ£€æŸ¥å¯†ç é•¿åº¦æ˜¯å¦ç¬¦åˆè§„å®š
+ * ¼ì²éÃÜÂë³¤¶ÈÊÇ·ñ·ûºÏ¹æ¶¨
  *
  * @param STRING $password
  * @return 	TRUE or FALSE
@@ -35,9 +35,9 @@ function is_password($password) {
 }
 
  /**
- * æ£€æµ‹è¾“å…¥ä¸­æ˜¯å¦å«æœ‰é”™è¯¯å­—ç¬¦
+ * ¼ì²âÊäÈëÖÐÊÇ·ñº¬ÓÐ´íÎó×Ö·û
  *
- * @param char $string è¦æ£€æŸ¥çš„å­—ç¬¦ä¸²åç§°
+ * @param char $string Òª¼ì²éµÄ×Ö·û´®Ãû³Æ
  * @return TRUE or FALSE
  */
 function is_badword($string) {
@@ -51,9 +51,9 @@ function is_badword($string) {
 }
 
 /**
- * æ£€æŸ¥ç”¨æˆ·åæ˜¯å¦ç¬¦åˆè§„å®š
+ * ¼ì²éÓÃ»§ÃûÊÇ·ñ·ûºÏ¹æ¶¨
  *
- * @param STRING $username è¦æ£€æŸ¥çš„ç”¨æˆ·å
+ * @param STRING $username Òª¼ì²éµÄÓÃ»§Ãû
  * @return 	TRUE or FALSE
  */
 function is_username($username) {

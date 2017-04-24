@@ -4,8 +4,8 @@ $PHPCMS_VERSION_BUILD_TIME = PHPCMS_RELEASE;
 
 $PHPCMS_MODULES = array(
 'name'=>array('announce','comment','link','vote','message','mood','poster','formguide','wap','upgrade','tag','sms'),
-'modulename'=>array('ç½‘ç«™å…¬å‘Š','è¯„è®º','å‹æƒ…é“¾æŽ¥','æŠ•ç¥¨','çŸ­æ¶ˆæ¯','å¿ƒæƒ…æŒ‡æ•°','å¹¿å‘Šç®¡ç†','è¡¨å•å‘å¯¼','æ‰‹æœºé—¨æˆ·','åœ¨çº¿å‡çº§','æ ‡ç­¾å‘å¯¼','çŸ­ä¿¡å¹³å°'),
-'modules'=>array('announce'=>'ç½‘ç«™å…¬å‘Š','comment'=>'è¯„è®º','link'=>'å‹æƒ…é“¾æŽ¥','vote'=>'æŠ•ç¥¨','message'=>'çŸ­æ¶ˆæ¯','mood'=>'å¿ƒæƒ…æŒ‡æ•°','poster'=>'å¹¿å‘Šç®¡ç†','formguide'=>'è¡¨å•å‘å¯¼','wap'=>'æ‰‹æœºé—¨æˆ·','upgrade'=>'åœ¨çº¿å‡çº§','tag'=>'æ ‡ç­¾å‘å¯¼','sms'=>'çŸ­ä¿¡å¹³å°'),
+'modulename'=>array('ÍøÕ¾¹«¸æ','ÆÀÂÛ','ÓÑÇéÁ´½Ó','Í¶Æ±','¶ÌÏûÏ¢','ÐÄÇéÖ¸Êý','¹ã¸æ¹ÜÀí','±íµ¥Ïòµ¼','ÊÖ»úÃÅ»§','ÔÚÏßÉý¼¶','±êÇ©Ïòµ¼','¶ÌÐÅÆ½Ì¨'),
+'modules'=>array('announce'=>'ÍøÕ¾¹«¸æ','comment'=>'ÆÀÂÛ','link'=>'ÓÑÇéÁ´½Ó','vote'=>'Í¶Æ±','message'=>'¶ÌÏûÏ¢','mood'=>'ÐÄÇéÖ¸Êý','poster'=>'¹ã¸æ¹ÜÀí','formguide'=>'±íµ¥Ïòµ¼','wap'=>'ÊÖ»úÃÅ»§','upgrade'=>'ÔÚÏßÉý¼¶','tag'=>'±êÇ©Ïòµ¼','sms'=>'¶ÌÐÅÆ½Ì¨'),
 'introduce'=>array()
 );
 ?>

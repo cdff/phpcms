@@ -10,13 +10,13 @@
                     <div class="l"></div>
                     <div class="ct_box">
                      <div class="nr">
-                  	<div id="installmessage" >æ­£åœ¨å‡†å¤‡å®‰è£… ...<br /></div>
+                  	<div id="installmessage" >ÕıÔÚ×¼±¸°²×° ...<br /></div>
                      </div>
                     </div>
                 </div>
                 <div class="bg_b"></div>
             </div>
-            <div class="btn_box"><a href="javascript:history.go(-1);" class="s_btn pre">ä¸Šä¸€æ­¥</a><a href="javascript:void(0);"  onClick="$('#install').submit();return false;" class="x_btn pre" id="finish">å®‰è£…ä¸­..</a></div>            
+            <div class="btn_box"><a href="javascript:history.go(-1);" class="s_btn pre">ÉÏÒ»²½</a><a href="javascript:void(0);"  onClick="$('#install').submit();return false;" class="x_btn pre" id="finish">°²×°ÖĞ..</a></div>            
         </div>
     </div>
     <div id="hiddenop"></div>
@@ -34,21 +34,21 @@ reloads();
 })
 var n = 0;
 var setting =  new Array();
-setting['admin'] = 'åå°ç®¡ç†ä¸»æ¨¡å—å®‰è£…æˆåŠŸ......';
-setting['phpsso'] = 'PHPSSOå•ç‚¹ç™»å½•ç³»ç»Ÿå®‰è£…æˆåŠŸ......';
-setting['comment'] = 'è¯„è®ºæ¨¡å—å®‰è£…æˆåŠŸ......';
-setting['announce'] = 'å…¬å‘Šæ¨¡å—å®‰è£…æˆåŠŸ......';
-setting['poster'] = 'å¹¿å‘Šæ¨¡å—å®‰è£…æˆåŠŸ......';
-setting['link'] = 'å‹æƒ…é“¾æ¥æ¨¡å—å®‰è£…æˆåŠŸ......';
-setting['vote'] = 'æŠ•ç¥¨æ¨¡å—å®‰è£…æˆåŠŸ......';
-setting['mood'] = 'å¿ƒæƒ…æŒ‡æ•°æ¨¡å—å®‰è£…æˆåŠŸ......';
-setting['message'] = 'çŸ­æ¶ˆæ¯æ¨¡å—å®‰è£…æˆåŠŸ......';
-setting['formguide'] = 'è¡¨å•å‘å¯¼æ¨¡å—å®‰è£…æˆåŠŸ......';
-setting['wap'] = 'æ‰‹æœºé—¨æˆ·æ¨¡å—å®‰è£…æˆåŠŸ......';
-setting['upgrade'] = 'è‡ªåŠ¨å‡çº§æ¨¡å—å®‰è£…æˆåŠŸ......';
-setting['tag'] = 'æ ‡ç­¾æ¨¡å—å®‰è£…æˆåŠŸ......';
-setting['sms'] = 'çŸ­ä¿¡æ¨¡å—å®‰è£…æˆåŠŸ......';
-setting['video'] = 'è§†é¢‘æ¨¡å—å®‰è£…æˆåŠŸ......';
+setting['admin'] = 'ºóÌ¨¹ÜÀíÖ÷Ä£¿é°²×°³É¹¦......';
+setting['phpsso'] = 'PHPSSOµ¥µãµÇÂ¼ÏµÍ³°²×°³É¹¦......';
+setting['comment'] = 'ÆÀÂÛÄ£¿é°²×°³É¹¦......';
+setting['announce'] = '¹«¸æÄ£¿é°²×°³É¹¦......';
+setting['poster'] = '¹ã¸æÄ£¿é°²×°³É¹¦......';
+setting['link'] = 'ÓÑÇéÁ´½ÓÄ£¿é°²×°³É¹¦......';
+setting['vote'] = 'Í¶Æ±Ä£¿é°²×°³É¹¦......';
+setting['mood'] = 'ĞÄÇéÖ¸ÊıÄ£¿é°²×°³É¹¦......';
+setting['message'] = '¶ÌÏûÏ¢Ä£¿é°²×°³É¹¦......';
+setting['formguide'] = '±íµ¥Ïòµ¼Ä£¿é°²×°³É¹¦......';
+setting['wap'] = 'ÊÖ»úÃÅ»§Ä£¿é°²×°³É¹¦......';
+setting['upgrade'] = '×Ô¶¯Éı¼¶Ä£¿é°²×°³É¹¦......';
+setting['tag'] = '±êÇ©Ä£¿é°²×°³É¹¦......';
+setting['sms'] = '¶ÌĞÅÄ£¿é°²×°³É¹¦......';
+setting['video'] = 'ÊÓÆµÄ£¿é°²×°³É¹¦......';
 
 var dbhost = '<?php echo $dbhost?>';
 var dbport = '<?php echo $dbport?>';
@@ -72,11 +72,11 @@ function reloads() {
 		   data: "step=installmodule&module="+m_d[n]+"&dbhost="+dbhost+"&dbport="+dbport+"&dbuser="+dbuser+"&dbpw="+dbpw+"&dbname="+dbname+"&tablepre="+tablepre+"&dbcharset="+dbcharset+"&pconnect="+pconnect+"&username="+username+"&password="+password+"&email="+email+"&ftp_user="+ftp_user+"&password_key="+password_key+"&sid="+Math.random()*5,
 		   success: function(msg){
 			   if(msg==1) {
-				   alert('æŒ‡å®šçš„æ•°æ®åº“ä¸å­˜åœ¨ï¼Œç³»ç»Ÿä¹Ÿæ— æ³•åˆ›å»ºï¼Œè¯·å…ˆé€šè¿‡å…¶ä»–æ–¹å¼å»ºç«‹å¥½æ•°æ®åº“ï¼');
+				   alert('Ö¸¶¨µÄÊı¾İ¿â²»´æÔÚ£¬ÏµÍ³Ò²ÎŞ·¨´´½¨£¬ÇëÏÈÍ¨¹ıÆäËû·½Ê½½¨Á¢ºÃÊı¾İ¿â£¡');
 			   } else if(msg==2) {
-				   $('#installmessage').append("<font color='#ff0000'>"+m_d[n]+"/install/mysql.sql æ•°æ®åº“æ–‡ä»¶ä¸å­˜åœ¨</font>");
+				   $('#installmessage').append("<font color='#ff0000'>"+m_d[n]+"/install/mysql.sql Êı¾İ¿âÎÄ¼ş²»´æÔÚ</font>");
 			   } else if(msg.length>20) {
-				   $('#installmessage').append("<font color='#ff0000'>é”™è¯¯ä¿¡æ¯ï¼š</font>"+msg);
+				   $('#installmessage').append("<font color='#ff0000'>´íÎóĞÅÏ¢£º</font>"+msg);
 			   } else {
 				   $('#installmessage').append(setting[m_d[n]] + msg + "<img src='images/correct.gif' /><br>");				   
 					n++;
@@ -86,13 +86,13 @@ function reloads() {
 						var testdata = $('#testdata').val();
 						if(testdata == 1) {
 							$('#hiddenop').load('?step=testdata&sid='+Math.random()*5);
-							$('#installmessage').append("<font color='yellow'>æµ‹è¯•æ•°æ®å®‰è£…å®Œæˆ</font><br>");
+							$('#installmessage').append("<font color='yellow'>²âÊÔÊı¾İ°²×°Íê³É</font><br>");
 						}						
 						$('#hiddenop').load('?step=cache_all&sid='+Math.random()*5);						
-						$('#installmessage').append("<font color='yellow'>ç¼“å­˜æ›´æ–°æˆåŠŸ</font><br>");
-						$('#installmessage').append("<font color='yellow'>å®‰è£…å®Œæˆ</font>");
+						$('#installmessage').append("<font color='yellow'>»º´æ¸üĞÂ³É¹¦</font><br>");
+						$('#installmessage').append("<font color='yellow'>°²×°Íê³É</font>");
 						$('#finish').removeClass('pre');
-						$('#finish').html('å®‰è£…å®Œæˆ');
+						$('#finish').html('°²×°Íê³É');
 						setTimeout("$('#install').submit();",1000); 						
 					}
 					document.getElementById('installmessage').scrollTop = document.getElementById('installmessage').scrollHeight;

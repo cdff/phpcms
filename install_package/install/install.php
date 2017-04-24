@@ -1,11 +1,11 @@
 <?php
 @set_time_limit(1000);
 if(phpversion() < '5.3.0') set_magic_quotes_runtime(0);
-if(phpversion() < '5.2.0') exit('æ‚¨çš„phpç‰ˆæœ¬è¿‡ä½ï¼Œä¸èƒ½å®‰è£…æœ¬è½¯ä»¶ï¼Œè¯·å‡çº§åˆ°5.2.0æˆ–æ›´é«˜ç‰ˆæœ¬å†å®‰è£…ï¼Œè°¢è°¢ï¼');
+if(phpversion() < '5.2.0') exit('ÄúµÄphp°æ±¾¹ıµÍ£¬²»ÄÜ°²×°±¾Èí¼ş£¬ÇëÉı¼¶µ½5.2.0»ò¸ü¸ß°æ±¾ÔÙ°²×°£¬Ğ»Ğ»£¡');
 include '../phpcms/base.php';
 define('INSTALL_MODULE',true);
 defined('IN_PHPCMS') or exit('No permission resources.');
-if(file_exists(CACHE_PATH.'install.lock')) exit('æ‚¨å·²ç»å®‰è£…è¿‡PHPCMS,å¦‚æœéœ€è¦é‡æ–°å®‰è£…ï¼Œè¯·åˆ é™¤ ./caches/install.lock æ–‡ä»¶ï¼');
+if(file_exists(CACHE_PATH.'install.lock')) exit('ÄúÒÑ¾­°²×°¹ıPHPCMS,Èç¹ûĞèÒªÖØĞÂ°²×°£¬ÇëÉ¾³ı ./caches/install.lock ÎÄ¼ş£¡');
 pc_base::load_sys_class('param','','','0');
 pc_base::load_sys_func('global');
 pc_base::load_sys_func('dir');
@@ -23,7 +23,7 @@ $mode = 0777;
 
 switch($step)
 {
-    case '1': //å®‰è£…è®¸å¯åè®®
+    case '1': //°²×°Ğí¿ÉĞ­Òé
 		param::set_cookie('reg_sso_succ','');
 		$license = file_get_contents(PHPCMS_PATH."install/license.txt");
 		
@@ -31,7 +31,7 @@ switch($step)
 
 		break;
 	
-	case '2':  //ç¯å¢ƒæ£€æµ‹ (FTPå¸å·è®¾ç½®ï¼‰
+	case '2':  //»·¾³¼ì²â (FTPÕÊºÅÉèÖÃ£©
         $PHP_GD  = '';
 		if(extension_loaded('gd')) {
 			if(function_exists('imagepng')) $PHP_GD .= 'png';
@@ -42,26 +42,26 @@ switch($step)
 		if(extension_loaded('json')) {
 			if(function_exists('json_decode') && function_exists('json_encode')) $PHP_JSON = '1';
 		}
-		//æ–°åŠ fsockopen å‡½æ•°åˆ¤æ–­,æ­¤å‡½æ•°å½±å“å®‰è£…åä¼šå‘˜æ³¨å†ŒåŠç™»å½•æ“ä½œã€‚
+		//ĞÂ¼Ófsockopen º¯ÊıÅĞ¶Ï,´Ëº¯ÊıÓ°Ïì°²×°ºó»áÔ±×¢²á¼°µÇÂ¼²Ù×÷¡£
 		if(function_exists('fsockopen')) {
 			$PHP_FSOCKOPEN = '1';
 		}
         $PHP_DNS = preg_match("/^[0-9.]{7,15}$/", @gethostbyname('www.phpcms.cn')) ? 1 : 0;
-		//æ˜¯å¦æ»¡è¶³phpcmså®‰è£…éœ€æ±‚
+		//ÊÇ·ñÂú×ãphpcms°²×°ĞèÇó
 		$is_right = (phpversion() >= '5.2.0' && extension_loaded('mysqli') && $PHP_JSON && $PHP_GD && $PHP_FSOCKOPEN) ? 1 : 0;		
 		include PHPCMS_PATH."install/step/step".$step.".tpl.php";
 		break;
 	
-	case '3'://é€‰æ‹©å®‰è£…æ¨¡å—
+	case '3'://Ñ¡Ôñ°²×°Ä£¿é
 		require PHPCMS_PATH.'install/modules.inc.php';
 		include PHPCMS_PATH."install/step/step".$step.".tpl.php";
 		break;
 	
-	case '4': //æ£€æµ‹ç›®å½•å±æ€§
+	case '4': //¼ì²âÄ¿Â¼ÊôĞÔ
 		$selectmod = $_POST['selectmod'];
 		$testdata = $_POST['testdata'];
 		$selectmod = isset($selectmod) ? ','.implode(',', $selectmod) : '';
-		$install_phpsso = (isset($_POST['install_phpsso']) && !empty($_POST['install_phpsso'])) ? intval($_POST['install_phpsso']) : showmessage('è¯·é€‰æ‹©ssoå®‰è£…ç±»å‹');
+		$install_phpsso = (isset($_POST['install_phpsso']) && !empty($_POST['install_phpsso'])) ? intval($_POST['install_phpsso']) : showmessage('ÇëÑ¡Ôñsso°²×°ÀàĞÍ');
 		$needmod = 'admin,phpsso';
 		$reg_sso_status = '';
 		$reg_sso_succ = param::get_cookie('reg_sso_succ');
@@ -83,9 +83,9 @@ switch($step)
 				$returnid = @file_get_contents($remote_url);
 			}
 			if($returnid == '-1') {
-				$reg_sso_status = 'PHPSSOç¼ºå°‘ä¼ é€’å‚æ•°';
+				$reg_sso_status = 'PHPSSOÈ±ÉÙ´«µİ²ÎÊı';
 			} elseif($returnid == '-2') {
-				$reg_sso_status = 'PHPSSOç”¨æˆ·åä¸å­˜åœ¨æˆ–è€…å¯†ç é”™è¯¯ï¼Œè¯·æ£€æŸ¥';
+				$reg_sso_status = 'PHPSSOÓÃ»§Ãû²»´æÔÚ»òÕßÃÜÂë´íÎó£¬Çë¼ì²é';
 			} elseif($returnid > 0){
 				$reg_sso = array('phpsso'=>'1',
 								'phpsso_appid'=>$returnid,
@@ -95,9 +95,9 @@ switch($step)
 				set_config($reg_sso,'system');
 				param::set_cookie('reg_sso_succ',$returnid);
 			} elseif($returnid == '-4') {
-				$reg_sso_status = 'è¯·åˆ é™¤phpsso_server/caches/phpsso_install.lock';
+				$reg_sso_status = 'ÇëÉ¾³ıphpsso_server/caches/phpsso_install.lock';
 			} else {
-				$reg_sso_status = 'PHPSSO çš„ URL åœ°å€å¯èƒ½å¡«å†™é”™è¯¯ï¼Œè¯·æ£€æŸ¥!';
+				$reg_sso_status = 'PHPSSO µÄ URL µØÖ·¿ÉÄÜÌîĞ´´íÎó£¬Çë¼ì²é!';
 			}
 		}
 		
@@ -110,14 +110,14 @@ switch($step)
 			$file = trim($file);
 			if(is_dir(PHPCMS_PATH.$file)) {
 				$is_dir = '1';
-				$cname = 'ç›®å½•';
-				//ç»§ç»­æ£€æŸ¥å­ç›®å½•æƒé™ï¼Œæ–°åŠ å‡½æ•°
+				$cname = 'Ä¿Â¼';
+				//¼ÌĞø¼ì²é×ÓÄ¿Â¼È¨ÏŞ£¬ĞÂ¼Óº¯Êı
 				$write_able = writable_check(PHPCMS_PATH.$file);
 			} else {
 				$is_dir = '0';
-				$cname = 'æ–‡ä»¶';
+				$cname = 'ÎÄ¼ş';
 			}
-			//æ–°çš„åˆ¤æ–­
+			//ĞÂµÄÅĞ¶Ï
 			if($is_dir =='0' && is_writable(PHPCMS_PATH.$file)) {
 				$is_writable = 1;
 			} elseif($is_dir =='1' && dir_writeable(PHPCMS_PATH.$file)){
@@ -140,14 +140,14 @@ switch($step)
 		} else {
 			$is_writable = 0;
 		}
-		$filesmod[$_k+1]['file'] = 'ç½‘ç«™æ ¹ç›®å½•';
+		$filesmod[$_k+1]['file'] = 'ÍøÕ¾¸ùÄ¿Â¼';
 		$filesmod[$_k+1]['is_dir'] = '1';
-		$filesmod[$_k+1]['cname'] = 'ç›®å½•';			
+		$filesmod[$_k+1]['cname'] = 'Ä¿Â¼';			
 		$filesmod[$_k+1]['is_writable'] = $is_writable;						
 		include PHPCMS_PATH."install/step/step".$step.".tpl.php";
 		break;
 
-	case '5': //é…ç½®å¸å· ï¼ˆMYSQLå¸å·ã€ç®¡ç†å‘˜å¸å·ã€ï¼‰
+	case '5': //ÅäÖÃÕÊºÅ £¨MYSQLÕÊºÅ¡¢¹ÜÀíÔ±ÕÊºÅ¡¢£©
 		$database = pc_base::load_config('database');
 		$testdata = $_POST['testdata'];
 		extract($database['default']);
@@ -156,24 +156,24 @@ switch($step)
 		include PHPCMS_PATH."install/step/step".$step.".tpl.php";
 		break;
 
-	case '6': //å®‰è£…è¯¦ç»†è¿‡ç¨‹
+	case '6': //°²×°ÏêÏ¸¹ı³Ì
 		extract($_POST);
 		$testdata = $_POST['testdata'];
 		include PHPCMS_PATH."install/step/step".$step.".tpl.php";
 		break;
 
-	case '7': //å®Œæˆå®‰è£…
+	case '7': //Íê³É°²×°
 		$pos = strpos(get_url(),'install/install.php');
 		$url = substr(get_url(),0,$pos);
-		//è®¾ç½®cmsä¸sso æŠ¥é”™ä¿¡æ¯
+		//ÉèÖÃcmsÓësso ±¨´íĞÅÏ¢
 		set_config(array('errorlog'=>'1'),'system');			
 		file_put_contents(CACHE_PATH.'install.lock','');
 		include PHPCMS_PATH."install/step/step".$step.".tpl.php";
-		//åˆ é™¤å®‰è£…ç›®å½•
+		//É¾³ı°²×°Ä¿Â¼
 		delete_install(PHPCMS_PATH.'install/');
 		break;
 	
-	case 'installmodule': //æ‰§è¡ŒSQL
+	case 'installmodule': //Ö´ĞĞSQL
 		extract($_POST);
 		$GLOBALS['dbcharset'] = $dbcharset;
 		$PHP_SELF = isset($_SERVER['PHP_SELF']) ? $_SERVER['PHP_SELF'] : (isset($_SERVER['SCRIPT_NAME']) ? $_SERVER['SCRIPT_NAME'] : $_SERVER['ORIG_PATH_INFO']);
@@ -229,21 +229,21 @@ switch($step)
 			if(file_exists(PHPCMS_PATH."install/main/".$dbfile)) {
 				$sql = file_get_contents(PHPCMS_PATH."install/main/".$dbfile);
 				_sql_execute($link,$sql);
-				//åˆ›å»ºç½‘ç«™åˆ›å§‹äºº
+				//´´½¨ÍøÕ¾´´Ê¼ÈË
 				if(CHARSET=='gbk') $username = iconv('UTF-8','GBK',$username);
 				$password_arr = password($password);
 				$password = $password_arr['password'];
 				$encrypt = $password_arr['encrypt'];
 				$email = trim($email);
 				_sql_execute($link,"INSERT INTO ".$tablepre."admin (`userid`,`username`,`password`,`roleid`,`encrypt`,`lastloginip`,`lastlogintime`,`email`,`realname`,`card`) VALUES ('1','$username','$password',1,'$encrypt','','','$email','','')");
-				//è®¾ç½®é»˜è®¤ç«™ç‚¹1åŸŸå
+				//ÉèÖÃÄ¬ÈÏÕ¾µã1ÓòÃû
 				_sql_execute($link,"update ".$tablepre."site set `domain`='$siteurl' where `siteid`='1'");
 				
 			} else {
-				echo '2';//æ•°æ®åº“æ–‡ä»¶ä¸å­˜åœ¨
+				echo '2';//Êı¾İ¿âÎÄ¼ş²»´æÔÚ
 			}							
 		} elseif ($module == 'phpsso') {
-			//å®‰è£…phpsso
+			//°²×°phpsso
 			
 			$ssourl = $siteurl.'phpsso_server/';
 			$cookie_pre = random(5, 'abcdefghigklmnopqrstuvwxyzABCDEFGHIGKLMNOPQRSTUVWXYZ').'_';
@@ -273,9 +273,9 @@ switch($step)
 						'pconnect'=>$pconnect,
 						'charset'=>$dbcharset,
 						);
-			set_config($sys_sso_config,'system');	//æ›´æ”¹cmsä¸­ssoé…ç½®				
-			set_sso_config($sso_config,'system');   //å†™å…¥ssoä¸­é…ç½®ä¿¡æ¯
-			set_sso_config($sso_db_config,'database'); //å†™å…¥ssoæ•°æ®åº“é…ç½®ä¿¡æ¯
+			set_config($sys_sso_config,'system');	//¸ü¸ÄcmsÖĞssoÅäÖÃ				
+			set_sso_config($sso_config,'system');   //Ğ´ÈëssoÖĞÅäÖÃĞÅÏ¢
+			set_sso_config($sso_db_config,'database'); //Ğ´ÈëssoÊı¾İ¿âÅäÖÃĞÅÏ¢
 			
 			$link = mysqli_connect($dbhost, $dbuser, $dbpw) or die ('Not connected : ' . mysqli_connect_error());
 			$version = mysqli_get_server_info($link);			
@@ -291,14 +291,14 @@ switch($step)
 				$sql = file_get_contents(PHPCMS_PATH."install/main/".$dbfile);
 				_sql_execute($link,$sql,$sso_tablepre,'ps_');				
 			}
-			//åˆ›å»ºssoç®¡ç†å‘˜ä¿¡æ¯
+			//´´½¨sso¹ÜÀíÔ±ĞÅÏ¢
 			$username = iconv('UTF-8','GBK',$username);
 			$password_arr = password($password);
 			$password = $password_arr['password'];
 			$encrypt = $password_arr['encrypt'];
 			
 			_sql_execute($link,"INSERT INTO ".$sso_tablepre."admin (`id`,`username`,`password`,`encrypt`,`issuper`,`lastlogin`,`ip`) VALUES ('1','$username','$password','$encrypt','1','','')");
-			//è®¾ç½®phpcms v9åº”ç”¨
+			//ÉèÖÃphpcms v9Ó¦ÓÃ
 			_sql_execute($link,"INSERT INTO ".$sso_tablepre."applications (`appid`,`type`,`name`,`url`,`authkey`,`ip`,`apifilename`,`charset`,`synlogin`) VALUES ('1','phpcms_v9','phpcms v9','$siteurl','$phpsso_auth_key','','api.php?op=phpsso','".CHARSET."','1')", $sso_tablepre, 'ps_');				
 			
 			$applist = array('1'
@@ -317,7 +317,7 @@ switch($step)
 			$applist = "<?php\nreturn ".var_export($applist, true).";\n?>";
 			file_put_contents(PHPCMS_PATH.'phpsso_server/caches/caches_admin/caches_data/applist.cache.php', $applist);
 		} else {
-			//å®‰è£…å¯é€‰æ¨¡å—
+			//°²×°¿ÉÑ¡Ä£¿é
 			if(in_array($module,array('announce','comment','link','vote','message','mood','poster','formguide','wap','upgrade','tag','sms'))) {
 				$install_module = pc_base::load_app_class('module_api','admin');
 				$install_module->install($module);
@@ -326,7 +326,7 @@ switch($step)
 		echo $module;
 		break;
 		
-	//å®‰è£…æµ‹è¯•æ•°æ®	
+	//°²×°²âÊÔÊı¾İ	
 	case 'testdata':
 		$default_db = pc_base::load_config('database','default');
 		$dbcharset = $default_db['charset'];
@@ -347,7 +347,7 @@ switch($step)
 		}
 		break;	
 		
-	//æ•°æ®åº“æµ‹è¯•
+	//Êı¾İ¿â²âÊÔ
 	case 'dbtest':
 		extract($_GET);
 		$link = @mysqli_connect($dbhost, $dbuser, $dbpw,null,$dbport);
@@ -480,12 +480,12 @@ function writable_check($path){
  	while (($file = readdir($dir)) !== false){
 		if($file!='.' && $file!='..'){
 			if(is_file($path.'/'.$file)){
-				//æ˜¯æ–‡ä»¶åˆ¤æ–­æ˜¯å¦å¯å†™ï¼Œä¸å¯å†™ç›´æ¥è¿”å›0ï¼Œä¸å‘ä¸‹ç»§ç»­
+				//ÊÇÎÄ¼şÅĞ¶ÏÊÇ·ñ¿ÉĞ´£¬²»¿ÉĞ´Ö±½Ó·µ»Ø0£¬²»ÏòÏÂ¼ÌĞø
 				if(!is_writable($path.'/'.$file)){
  					return '0';
 				}
 			}else{
-				//ç›®å½•ï¼Œå¾ªç¯æ­¤å‡½æ•°,å…ˆåˆ¤æ–­æ­¤ç›®å½•æ˜¯å¦å¯å†™ï¼Œä¸å¯å†™ç›´æ¥è¿”å›0 ï¼Œå¯å†™å†åˆ¤æ–­å­ç›®å½•æ˜¯å¦å¯å†™ 
+				//Ä¿Â¼£¬Ñ­»·´Ëº¯Êı,ÏÈÅĞ¶Ï´ËÄ¿Â¼ÊÇ·ñ¿ÉĞ´£¬²»¿ÉĞ´Ö±½Ó·µ»Ø0 £¬¿ÉĞ´ÔÙÅĞ¶Ï×ÓÄ¿Â¼ÊÇ·ñ¿ÉĞ´ 
 				$dir_wrt = dir_writeable($path.'/'.$file);
 				if($dir_wrt=='0'){
 					return '0';

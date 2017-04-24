@@ -1,6 +1,6 @@
 <?php
 defined('IN_PHPCMS') or exit('No permission resources.');
-//æ¨¡å‹ç¼“å­˜è·¯å¾„
+//Ä£ĞÍ»º´æÂ·¾¶
 define('CACHE_MODEL_PATH',CACHE_PATH.'caches_model'.DIRECTORY_SEPARATOR.'caches_data'.DIRECTORY_SEPARATOR);
 class down {
 	private $db;
@@ -35,7 +35,7 @@ class down {
 		$this->category = $CATEGORYS[$catid];
 		$this->category_setting = string2array($this->category['setting']);
 		
-		//æ£€æŸ¥æ–‡ç« ä¼šå‘˜ç»„æƒé™
+		//¼ì²éÎÄÕÂ»áÔ±×éÈ¨ÏŞ
 		$groupids_view = '';
 		if ($rs['groupids_view']) $groupids_view = explode(',', $rs['groupids_view']);
 		if($groupids_view && is_array($groupids_view)) {
@@ -47,7 +47,7 @@ class down {
 			}
 			if(!in_array($_groupid,$groupids_view)) showmessage(L('no_priv'));
 		} else {
-			//æ ¹æ®æ ç›®è®¿é—®æƒé™åˆ¤æ–­æƒé™
+			//¸ù¾İÀ¸Ä¿·ÃÎÊÈ¨ÏŞÅĞ¶ÏÈ¨ÏŞ
 			$_priv_data = $this->_category_priv($catid);
 			if($_priv_data=='-1') {
 				$forward = urlencode(get_url());
@@ -56,7 +56,7 @@ class down {
 				showmessage(L('no_priv'));
 			}
 		}
-		//é˜…è¯»æ”¶è´¹ ç±»å‹
+		//ÔÄ¶ÁÊÕ·Ñ ÀàĞÍ
 		$paytype = $rs['paytype'];
 		$readpoint = $rs['readpoint'];
 		if($readpoint || $this->category_setting['defaultchargepoint']) {
@@ -64,7 +64,7 @@ class down {
 				$readpoint = $this->category_setting['defaultchargepoint'];
 				$paytype = $this->category_setting['paytype'];
 			}		
-			//æ£€æŸ¥æ˜¯å¦æ”¯ä»˜è¿‡
+			//¼ì²éÊÇ·ñÖ§¸¶¹ı
 			$allow_visitor = self::_check_payment($catid.'_'.$id,$paytype,$catid);
 			if(!$allow_visitor) {
 				$http_referer = urlencode(get_url());
@@ -107,7 +107,7 @@ class down {
 		if($endtime > 3600) showmessage(L('url_invalid'));
 		if($m) $fileurl = trim($s).trim($fileurl);
 		if(preg_match('/(php|phtml|php3|php4|jsp|dll|asp|cer|asa|shtml|shtm|aspx|asax|cgi|fcgi|pl)(\.|$)/i',$fileurl) ) showmessage(L('url_error'));
-		//è¿œç¨‹æ–‡ä»¶
+		//Ô¶³ÌÎÄ¼ş
 		if(strpos($fileurl, ':/') && (strpos($fileurl, pc_base::load_config('system','upload_url')) === false)) { 
 			header("Location: $fileurl");
 		} else {
@@ -116,7 +116,7 @@ class down {
 			} else {
 				$fileurl = str_replace(array(pc_base::load_config('system','upload_url'),'/'), array(pc_base::load_config('system','upload_path'),DIRECTORY_SEPARATOR), $fileurl);
 				$filename = basename($fileurl);
-				//å¤„ç†ä¸­æ–‡æ–‡ä»¶
+				//´¦ÀíÖĞÎÄÎÄ¼ş
 				if(preg_match("/^([\s\S]*?)([\x81-\xfe][\x40-\xfe])([\s\S]*?)/", $fileurl)) {
 					$filename = str_replace(array("%5C", "%2F", "%3A"), array("\\", "/", ":"), urlencode($fileurl));
 					$filename = urldecode(basename($filename));
@@ -130,7 +130,7 @@ class down {
 	}
 	
 	/**
-	 * æ£€æŸ¥æ”¯ä»˜çŠ¶æ€
+	 * ¼ì²éÖ§¸¶×´Ì¬
 	 */
 	private function _check_payment($flag,$paytype,$catid) {
 		$_userid = param::get_cookie('_userid');
@@ -153,7 +153,7 @@ class down {
 	}
 
 	/**
-	 * æ£€æŸ¥é˜…è¯»æƒé™
+	 * ¼ì²éÔÄ¶ÁÈ¨ÏŞ
 	 *
 	 */
 	private function _category_priv($catid) {

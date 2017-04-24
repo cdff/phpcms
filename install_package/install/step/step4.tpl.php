@@ -13,22 +13,22 @@
 					<?php if($reg_sso_status=='') {?>
 	 				<table cellpadding="0" cellspacing="0" class="table_list">
                   <tr>
-                    <th class="col1">Г⌡╝Е╫∙Ф√┤Д╩╤</th>
-                    <th class="col2">Ф┴─И°─Г┼╤Ф─│</th>
-                    <th class="col3">Е╫⌠Е┴█Г┼╤Ф─│</th>
+                    <th class="col1">д©б╪нд╪Ч</th>
+                    <th class="col2">кЫпХв╢л╛</th>
+                    <th class="col3">╣╠г╟в╢л╛</th>
                   </tr>
                   <?php foreach ($filesmod as $filemod) {?>
                   <tr>
                     <td><?php echo $filemod['file']?></td>
-                    <td><span><img src="images/correct.gif" />&nbsp;Е▐╞Е├≥</span></td>
-                    <td><?php echo $filemod['is_writable'] ? '<span><img src="images/correct.gif" />&nbsp;Е▐╞Е├≥</span>' : '<font class="red"><img src="images/error.gif" />&nbsp;Д╦█Е▐╞Е├≥</font>'?></td>
+                    <td><span><img src="images/correct.gif" />&nbsp;©ип╢</span></td>
+                    <td><?php echo $filemod['is_writable'] ? '<span><img src="images/correct.gif" />&nbsp;©ип╢</span>' : '<font class="red"><img src="images/error.gif" />&nbsp;╡╩©ип╢</font>'?></td>
                   </tr>
 					<?php } ?>
                 </table>
 				<?php } else { ?>
 				<div class="err_info">
 				<?php echo $reg_sso_status?><br/>
-				<span>Х╞╥Г┌╧Е┤╩Б─°Д╦┼Д╦─Ф╜╔Б─²Ф▄┴И▓╝О╪▄И┤█Ф√╟Е║╚Е├≥Ц─┌</span>
+				<span>гК╣Ц╩В║╟иор╩╡╫║╠╟╢е╔ё╛жьпблНп╢║ё</span>
 				<?php } ?>
 				</div>
  					</div>
@@ -36,11 +36,11 @@
                 </div>
                 <div class="bg_b"></div>
             </div>
-            <div class="btn_box"><a href="javascript:history.go(-1);" class="s_btn">Д╦┼Д╦─Ф╜╔</a>
+            <div class="btn_box"><a href="javascript:history.go(-1);" class="s_btn">иор╩╡╫</a>
              <?php if($no_writablefile == 0) {?>
-            <a href="javascript:void(0);"  onClick="$('#install').submit();return false;" class="x_btn">Д╦▀Д╦─Ф╜╔</a>
+            <a href="javascript:void(0);"  onClick="$('#install').submit();return false;" class="x_btn">обр╩╡╫</a>
             <?php } else {?>
-			<a onClick="alert('Е╜≤Е°╗Д╦█Е▐╞Е├≥Г⌡╝Е╫∙Ф┬√Х─┘Ф√┤Д╩╤');" class="x_btn pre">Фё─Ф╣▀Д╦█И─ Х©┤</a>
+			<a onClick="alert('╢Фтз╡╩©ип╢д©б╪╩Руънд╪Ч');" class="x_btn pre">╪Л╡Б╡╩м╗╧Щ</a>
             <?php } ?>
             </div>
 			<form id="install" action="install.php?" method="post">

@@ -1,9 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
 <meta http-equiv="X-UA-Compatible" content="IE=7" />
-<title>å®‰è£…å®Œæˆ - phpcms V9 å®‰è£…å‘å¯¼</title>
+<title>°²×°Íê³É - phpcms V9 °²×°Ïòµ¼</title>
 <style type="text/css">
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{padding:0px; margin:0px;}
 fieldset, img{border:0;}
@@ -64,7 +64,7 @@ body fieldset label input{ margin-right:6px}
 body fieldset table th{ font-weight:normal; line-height:28px}
 .input-text{ border:1px solid #5eb0de; background-color:#3399d3; padding:2px 5px; color:#fff}
 
-/*è¡¨å•éªŒè¯*/
+/*±íµ¥ÑéÖ¤*/
 .onShow,.onFocus,.onError,.onCorrect,.onLoad,.onTime{display:inline-block;display:-moz-inline-stack;zoom:1;*display:inline; vertical-align:middle;	color:#fff;line-height:18px;padding:2px 10px 2px 0px; margin-left:10px;_margin-left:5px}
 .onShow{border-color:#40B3FF;color:yellow;}
 .onFocus{border-color:#40B3FF;color:yellow;}
@@ -102,16 +102,16 @@ body fieldset table th{ font-weight:normal; line-height:28px}
                     <div class="l"></div>
                     <div class="ct_box nobrd set7s">
                      <div class="nr">
-						<div class="gxwc"><h1>æ­å–œæ‚¨ï¼Œå®‰è£…æˆåŠŸï¼</h1></div>
+						<div class="gxwc"><h1>¹§Ï²Äú£¬°²×°³É¹¦£¡</h1></div>
 						<div class="clj">
 							<ul>
-								<li><a href="<?php echo $url?>index.php?m=admin&c=index" title="åå°ç®¡ç†" class="htgl">åå°ç®¡ç†</a></li>
+								<li><a href="<?php echo $url?>index.php?m=admin&c=index" title="ºóÌ¨¹ÜÀí" class="htgl">ºóÌ¨¹ÜÀí</a></li>
 							</ul>
 						</div>					
 						<div class="txt_c">
-						<span style="margin-right:8px;">*</span>å®‰è£…å®Œæ¯•è¯·ç™»å½•åå°ç”Ÿæˆé¦–é¡µï¼Œæ›´æ–°ç¼“å­˜<br/>
-						<span style="margin-right:8px;">*</span>é»˜è®¤phpcmsç®¡ç†å‘˜å¯†ç ä¸phpssoç®¡ç†å‘˜å¯†ç ç›¸åŒ<br/>
-						<span style="margin-right:8px;">*</span>ä¸ºäº†æ‚¨ç«™ç‚¹çš„å®‰å…¨ï¼Œå®‰è£…å®Œæˆåå³å¯å°†ç½‘ç«™æ ¹ç›®å½•ä¸‹çš„â€œinstallâ€æ–‡ä»¶å¤¹åˆ é™¤ã€‚</div>
+						<span style="margin-right:8px;">*</span>°²×°Íê±ÏÇëµÇÂ¼ºóÌ¨Éú³ÉÊ×Ò³£¬¸üĞÂ»º´æ<br/>
+						<span style="margin-right:8px;">*</span>Ä¬ÈÏphpcms¹ÜÀíÔ±ÃÜÂëÓëphpsso¹ÜÀíÔ±ÃÜÂëÏàÍ¬<br/>
+						<span style="margin-right:8px;">*</span>ÎªÁËÄúÕ¾µãµÄ°²È«£¬°²×°Íê³Éºó¼´¿É½«ÍøÕ¾¸ùÄ¿Â¼ÏÂµÄ¡°install¡±ÎÄ¼ş¼ĞÉ¾³ı¡£</div>
                      </div>
                     </div>
                 </div>
